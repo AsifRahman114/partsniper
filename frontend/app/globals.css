@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-jetbrains-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #0F1115;
+  color: #E8E9EC;
+}
+
+body {
+  font-family: var(--font-inter);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0F1115;
+}
+::-webkit-scrollbar-thumb {
+  background: #2C313A;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4150;
+}
+
+/* ------------------------------------------------------------
+   Targeting-reticle motif: corner brackets that appear on hover,
+   reinforcing the "sniping the best deal" brand concept. Applied
+   via the `.reticle` utility class on product cards and similar
+   interactive elements.
+------------------------------------------------------------ */
+.reticle {
+  position: relative;
+}
+.reticle::before,
+.reticle::after,
+.reticle .reticle-tr,
+.reticle .reticle-bl {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #C6FF3A;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+}
+.reticle::before {
+  top: 6px;
+  left: 6px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  transform: translate(4px, 4px);
+}
+.reticle::after {
+  bottom: 6px;
+  right: 6px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: translate(-4px, -4px);
+}
+.reticle .reticle-tr {
+  top: 6px;
+  right: 6px;
+  border-top: 2px solid #C6FF3A;
+  border-right: 2px solid #C6FF3A;
+  transform: translate(-4px, 4px);
+}
+.reticle .reticle-bl {
+  bottom: 6px;
+  left: 6px;
+  border-bottom: 2px solid #C6FF3A;
+  border-left: 2px solid #C6FF3A;
+  transform: translate(4px, -4px);
+}
+.reticle:hover::before,
+.reticle:hover::after,
+.reticle:hover .reticle-tr,
+.reticle:hover .reticle-bl {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Scope-style horizontal bar for comparing values (used in compare page) */
+.scope-bar-track {
+  background: #1A1D24;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 8px;
+}
+.scope-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9FCC2E, #C6FF3A);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+/* Subtle grid background for hero/empty sections */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(198,255,58,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(198,255,58,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@keyframes pulse-lime {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-pulse-lime {
+  animation: pulse-lime 2s ease-in-out infinite;
+}
