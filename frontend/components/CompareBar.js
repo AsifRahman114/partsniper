@@ -29,7 +29,7 @@ export default function CompareBar() {
               )}
               <button
                 onClick={() => remove(item.id)}
-                className="absolute inset-0 bg-bg/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity"
+                className="absolute inset-0 bg-ink/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity"
                 aria-label={`Remove ${item.name}`}
               >
                 <X className="w-4 h-4 text-danger" />
@@ -46,7 +46,7 @@ export default function CompareBar() {
             href={canCompare ? `/compare?ids=${ids}` : '#'}
             className={`text-sm font-semibold px-4 py-2 rounded-lg transition-colors ${
               canCompare
-                ? 'bg-lime text-bg hover:bg-limeDark'
+                ? 'bg-lime text-ink hover:bg-limeDark'
                 : 'bg-surface2 text-muted cursor-not-allowed pointer-events-none'
             }`}
           >

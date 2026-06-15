@@ -63,15 +63,15 @@ export default function ProductCard({ product, onSaveToggle }) {
 
         {/* Discount badge */}
         {hasDiscount && (
-          <div className="absolute top-2 left-2 bg-success text-bg text-xs font-bold font-mono px-2 py-1 rounded-md">
+          <div className="absolute top-2 left-2 bg-success text-ink text-xs font-bold font-mono px-2 py-1 rounded-md">
             -{Math.round(product.discountPct)}%
           </div>
         )}
 
         {/* Out of stock overlay */}
         {!product.inStock && (
-          <div className="absolute inset-0 bg-bg/70 flex items-center justify-center">
-            <span className="text-xs font-semibold text-muted border border-border rounded px-2 py-1 bg-bg/80">
+          <div className="absolute inset-0 bg-ink/70 flex items-center justify-center">
+            <span className="text-xs font-semibold text-muted border border-border rounded px-2 py-1 bg-ink/80">
               Out of Stock
             </span>
           </div>
@@ -86,7 +86,7 @@ export default function ProductCard({ product, onSaveToggle }) {
               toggle(product);
             }}
             className={`p-1.5 rounded-full transition-colors ${
-              selected ? 'bg-lime text-bg' : 'bg-bg/70 text-muted hover:text-text'
+              selected ? 'bg-lime text-ink' : 'bg-ink/70 text-muted hover:text-text'
             }`}
             aria-label="Select for comparison"
             title="Add to comparison"
@@ -96,7 +96,7 @@ export default function ProductCard({ product, onSaveToggle }) {
           {user && (
             <button
               onClick={handleSave}
-              className="p-1.5 rounded-full bg-bg/70 hover:bg-bg transition-colors"
+              className="p-1.5 rounded-full bg-ink/70 hover:bg-ink transition-colors"
               aria-label="Save product"
             >
               <Heart className={`w-4 h-4 ${saved ? 'fill-lime text-lime' : 'text-muted'}`} />

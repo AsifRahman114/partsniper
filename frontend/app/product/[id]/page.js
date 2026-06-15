@@ -74,12 +74,12 @@ export default function ProductDetailPage() {
             <div className="absolute inset-0 flex items-center justify-center text-muted text-sm">No image</div>
           )}
           {hasDiscount && (
-            <div className="absolute top-3 left-3 bg-success text-bg text-sm font-bold font-mono px-3 py-1.5 rounded-lg">
+            <div className="absolute top-3 left-3 bg-success text-ink text-sm font-bold font-mono px-3 py-1.5 rounded-lg">
               -{Math.round(product.discountPct)}% OFF
             </div>
           )}
           {!product.inStock && (
-            <div className="absolute top-3 right-3 bg-bg/90 border border-border text-muted text-sm font-medium px-3 py-1.5 rounded-lg">
+            <div className="absolute top-3 right-3 bg-ink/90 border border-border text-muted text-sm font-medium px-3 py-1.5 rounded-lg">
               Out of Stock
             </div>
           )}
@@ -123,7 +123,7 @@ export default function ProductDetailPage() {
               href={product.productUrl}
               target="_blank"
               rel="noopener noreferrer nofollow"
-              className="flex items-center justify-center gap-2 w-full bg-lime text-bg font-semibold rounded-lg py-3 hover:bg-limeDark transition-colors"
+              className="flex items-center justify-center gap-2 w-full bg-lime text-ink font-semibold rounded-lg py-3 hover:bg-limeDark transition-colors"
             >
               <ShoppingCart className="w-4 h-4" />
               Buy at {product.shop?.name}
@@ -173,7 +173,7 @@ export default function ProductDetailPage() {
                 className={`flex items-center justify-between gap-3 p-3 rounded-lg border transition-colors ${
                   listing.id === product.id
                     ? 'border-lime/40 bg-lime/5'
-                    : 'border-border hover:border-lime/30 bg-bg/40'
+                    : 'border-border hover:border-lime/30 bg-ink/10'
                 }`}
               >
                 <div className="flex items-center gap-3">

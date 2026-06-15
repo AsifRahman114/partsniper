@@ -3,8 +3,9 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Crosshair, Search, Scale, Wrench, User, Menu, X, LogOut, Settings } from 'lucide-react';
+import { Crosshair, Search, Scale, Wrench, User, Menu, X, LogOut, Settings, SunMedium, MoonStar } from 'lucide-react';
 import { useAuth } from '@/lib/auth-context';
+import { useTheme } from '@/lib/theme-context';
 
 export default function Navbar() {
   const { user, loading, logout } = useAuth();
@@ -12,6 +13,7 @@ export default function Navbar() {
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [search, setSearch] = useState('');
   const router = useRouter();
+  const { theme, toggleTheme } = useTheme();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -28,7 +30,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="border-b border-border sticky top-0 z-50 bg-bg/95 backdrop-blur-sm">
+    <header className="top-nav-shell sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
@@ -66,12 +68,21 @@ export default function Navbar() {
 
           {/* Auth area */}
           <div className="flex items-center gap-2 shrink-0">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-sm font-medium text-muted hover:border-lime/40 hover:text-text transition-colors"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? <SunMedium className="w-4 h-4 text-lime" /> : <MoonStar className="w-4 h-4 text-lime" />}
+              <span className="hidden sm:inline">{theme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
+            </button>
             {!loading && !user && (
               <>
                 <Link href="/login" className="hidden sm:inline-block text-sm font-medium text-muted hover:text-text transition-colors px-3 py-2">
                   Log in
                 </Link>
-                <Link href="/signup" className="text-sm font-semibold bg-lime text-bg px-4 py-2 rounded-lg hover:bg-limeDark transition-colors">
+                <Link href="/signup" className="text-sm font-semibold bg-lime text-ink px-4 py-2 rounded-lg hover:bg-limeDark transition-colors">
                   Sign up
                 </Link>
               </>

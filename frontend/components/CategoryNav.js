@@ -53,7 +53,7 @@ function CategoryPill({ label, Icon, active, onClick }) {
       onClick={onClick}
       className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-colors
         ${active
-          ? 'bg-lime text-bg border-lime'
+          ? 'bg-lime text-ink border-lime'
           : 'bg-surface text-muted border-border hover:border-lime/40 hover:text-text'}`}
     >
       <Icon className="w-3.5 h-3.5" />

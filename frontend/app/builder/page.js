@@ -181,7 +181,7 @@ function BuilderContent() {
         <button
           onClick={handleOptimize}
           disabled={optimizing}
-          className="flex items-center gap-2 bg-lime text-bg font-semibold rounded-lg px-5 py-2.5 hover:bg-limeDark transition-colors disabled:opacity-60"
+          className="flex items-center gap-2 bg-lime text-ink font-semibold rounded-lg px-5 py-2.5 hover:bg-limeDark transition-colors disabled:opacity-60"
         >
           {optimizing ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
           {hasAnyParts ? 'Re-optimize' : 'Auto-Build'}

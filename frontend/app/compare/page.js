@@ -52,7 +52,7 @@ function CompareContent() {
           </span>
           button on each product card.
         </p>
-        <Link href="/" className="inline-block bg-lime text-bg font-semibold rounded-lg px-5 py-2.5 hover:bg-limeDark transition-colors">
+        <Link href="/" className="inline-block bg-lime text-ink font-semibold rounded-lg px-5 py-2.5 hover:bg-limeDark transition-colors">
           Browse parts
         </Link>
       </div>
@@ -88,7 +88,7 @@ function CompareContent() {
           <div key={product.id} className="bg-surface border border-border rounded-2xl p-4 space-y-3 relative">
             <button
               onClick={() => removeItem(product.id)}
-              className="absolute top-3 right-3 p-1 rounded-full bg-bg/70 hover:bg-bg text-muted hover:text-danger transition-colors z-10"
+              className="absolute top-3 right-3 p-1 rounded-full bg-ink/70 hover:bg-ink text-muted hover:text-danger transition-colors z-10"
               aria-label="Remove from comparison"
             >
               <X className="w-4 h-4" />
@@ -99,10 +99,10 @@ function CompareContent() {
                 <Image src={product.imageUrl} alt={product.name} fill sizes="300px" className="object-cover" unoptimized />
               )}
               {product.isCheapest && (
-                <span className="absolute top-2 left-2 bg-success text-bg text-xs font-bold px-2 py-1 rounded-md">Cheapest</span>
+                <span className="absolute top-2 left-2 bg-success text-ink text-xs font-bold px-2 py-1 rounded-md">Cheapest</span>
               )}
               {product.isBestValue && (
-                <span className="absolute bottom-2 left-2 bg-lime text-bg text-xs font-bold px-2 py-1 rounded-md flex items-center gap-1">
+                <span className="absolute bottom-2 left-2 bg-lime text-ink text-xs font-bold px-2 py-1 rounded-md flex items-center gap-1">
                   <Trophy className="w-3 h-3" /> Best Value
                 </span>
               )}
@@ -164,7 +164,7 @@ function CompareContent() {
                           className="scope-bar-fill"
                           style={{
                             width: v.value != null ? `${maxVal ? (v.value / maxVal) * 100 : 0}%` : '0%',
-                            background: v.isBest ? undefined : '#3a4150',
+                            background: v.isBest ? undefined : 'rgb(var(--color-surface2))',
                           }}
                         />
                       </div>
