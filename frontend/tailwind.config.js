@@ -7,16 +7,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: '#0F1115',          // deep charcoal background
-        surface: '#1A1D24',     // card/panel slate
-        surface2: '#23272F',    // slightly lighter slate (hover states)
-        border: '#2C313A',
-        text: '#E8E9EC',        // off-white primary text
-        muted: '#8B919C',       // muted gray secondary text
-        lime: '#C6FF3A',        // electric lime accent ("sniper" color)
-        limeDark: '#9FCC2E',
-        success: '#3DDC97',     // success green for deals/discounts
-        danger: '#FF5C5C',
+        bg: 'rgb(var(--color-bg) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        surface2: 'rgb(var(--color-surface2) / <alpha-value>)',
+        border: 'rgb(var(--color-border) / <alpha-value>)',
+        text: 'rgb(var(--color-text) / <alpha-value>)',
+        muted: 'rgb(var(--color-muted) / <alpha-value>)',
+        lime: 'rgb(var(--color-lime) / <alpha-value>)',
+        limeDark: 'rgb(var(--color-lime-dark) / <alpha-value>)',
+        success: 'rgb(var(--color-success) / <alpha-value>)',
+        danger: 'rgb(var(--color-danger) / <alpha-value>)',
+        ink: 'rgb(var(--color-ink) / <alpha-value>)',
       },
       fontFamily: {
         display: ['var(--font-space-grotesk)', 'sans-serif'],

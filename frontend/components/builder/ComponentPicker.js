@@ -30,7 +30,7 @@ export default function ComponentPicker({ categorySlug, label, onSelect, onClose
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-bg/80 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-ink/80 backdrop-blur-sm" onClick={onClose} />
       <div className="relative bg-surface border border-border rounded-2xl w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden">
         <div className="flex items-center justify-between p-4 border-b border-border">
           <h2 className="font-display font-semibold text-lg">Select {label}</h2>
